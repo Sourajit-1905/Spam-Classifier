@@ -1,1 +1,44 @@
-Work coming Soon....
+sms-spam-detector/
+│
+├── backend/
+│   ├── app.py                      # Main API entrypoint (Flask/FastAPI)
+│   ├── model/
+│   │   ├── model.pkl                # Trained classifier (voting_clf or best model)
+│   │   ├── vectorizer.pkl           # Fitted TF-IDF vectorizer
+│   │   └── threshold.json           # Saved decision threshold
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── preprocess.py            # transform_message() + text cleaning logic
+│   ├── requirements.txt             # Backend Python dependencies
+│   └── runtime.txt                  # Python version pin for Render
+│
+├── frontend/
+│   ├── landing.html                 # Landing page with arrow button
+│   ├── index.html                   # Main page (SMS input + prediction UI)
+│   ├── css/
+│   │   ├── landing.css
+│   │   └── style.css
+│   ├── js/
+│   │   ├── landing.js               # Handles arrow click → redirect to index.html
+│   │   └── script.js                # Calls backend API, displays result
+│   └── assets/
+│       └── (images/icons for landing page, arrow icon etc.)
+│
+├── notebooks/
+│   └── Sms_Spam_Working.ipynb       # Original EDA/training notebook
+│
+├── data/
+│   └── spam.csv                     # Dataset (or script to fetch via kagglehub)
+│
+├── scripts/
+│   └── train.py                     # Clean, standalone training script (exported from notebook)
+│
+├── tests/
+│   └── test_app.py                  # Basic API/unit tests
+│
+├── .gitignore
+├── .env.example                     # Placeholder for env vars/config
+├── Procfile                         # For Render process declaration
+├── render.yaml                      # Render deployment blueprint (optional)
+├── README.md
+└── LICENSE
