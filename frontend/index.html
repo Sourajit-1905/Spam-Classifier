@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Detector | Check Message</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="logo">📩 SMS Spam Detector</div>
+        <nav>
+            <a href="landing.html">Home</a>
+            <a href="#insights">Model Insights</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <main class="app-main">
+        <div class="glass-card">
+            <h1>SMS Spam Checker</h1>
+            <p class="subtext">Paste a message below to check if it's spam.</p>
+
+            <div class="checker-grid">
+                <div class="input-col">
+                    <label for="messageInput">MESSAGE TEXT</label>
+                    <textarea id="messageInput" placeholder="Type or paste an SMS message here..."></textarea>
+                    <button id="checkBtn">CHECK MESSAGE</button>
+                </div>
+
+                <div class="result-col">
+                    <label>RESULT</label>
+                    <div class="result-box" id="resultBox">
+                        <p id="resultLabel">Awaiting input...</p>
+                        <p id="resultScore"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 SMS Spam Detector.</p>
+        <div class="footer-links">
+            <a href="#">Data Privacy</a>
+            <a href="#">API Specifications</a>
+            <a href="#">Model Architecture</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

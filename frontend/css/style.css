@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Header (shared style) */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.site-header nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.site-header nav a:hover {
+    color: #38bdf8;
+}
+
+/* Main / Glass Card */
+.app-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.glass-card {
+    width: 100%;
+    max-width: 950px;
+    background: rgba(8, 11, 22, 0.82);
+    border-radius: 18px;
+    padding: 45px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeUp 0.8s ease forwards;
+    animation-delay: 0.2s;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.glass-card h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.subtext {
+    margin-top: 8px;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+}
+
+/* Side-by-side layout */
+.checker-grid {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+}
+
+.input-col, .result-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.glass-card label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+}
+
+.glass-card textarea {
+    width: 100%;
+    flex: 1;
+    min-height: 180px;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    font-size: 1rem;
+    resize: vertical;
+    background: rgba(255,255,255,0.95);
+}
+
+.glass-card button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #06b6d4, #2563eb);
+    color: #fff;
+    border: none;
+    border-radius: 40px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
+    transition: transform 0.2s ease;
+}
+
+.glass-card button:hover {
+    transform: scale(1.02);
+}
+
+/* Result Box */
+.result-box {
+    flex: 1;
+    min-height: 180px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.95);
+    border: 1px solid #334155;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-box.spam {
+    border-color: #dc2626;
+    background: #fee2e2;
+}
+
+.result-box.not-spam {
+    border-color: #16a34a;
+    background: #dcfce7;
+}
+
+#resultLabel {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+#resultScore {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #475569;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+    .checker-grid {
+        flex-direction: column;
+    }
+}
+
+/* Footer */
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    font-size: 0.85rem;
+    color: #cbd5e1;
+}
+
+.footer-links a {
+    margin-left: 20px;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #38bdf8;
+}
+
+html {
+    background-color: #0b1120; /* dark fallback matching your background image */
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #0b1120; /* fallback shown instantly before image loads */
+    background-image: url('../assets/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
