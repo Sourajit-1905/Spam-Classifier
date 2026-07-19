@@ -12,7 +12,13 @@ checkBtn.addEventListener('click', async () => {
     if (!message) {
         resultLabel.textContent = "Please enter a message first.";
         resultScore.textContent = "";
-        resultBox.className = "result-box";
+        resultBox.className = "result-box warning";
+
+        // trigger shake
+        resultBox.classList.remove('shake'); // reset in case it's already applied
+        void resultBox.offsetWidth; // force reflow so animation replays
+        resultBox.classList.add('shake');
+
         return;
     }
 

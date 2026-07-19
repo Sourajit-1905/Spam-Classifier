@@ -6,14 +6,14 @@
 }
 
 html {
-    background-color: #0b1120; /* dark fallback matching your background image */
+    background-color: #0b0a14;
 }
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #0b1120; /* fallback shown instantly before image loads */
+    background-color: #0b0a14;
     background-image: url('../assets/background.jpg');
     background-size: cover;
     background-position: center;
@@ -26,7 +26,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 12, 30, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -34,19 +34,19 @@ body {
 .logo {
     font-weight: 700;
     font-size: 1.2rem;
-    color: #ffffff;
+    color: #fcd34d;
 }
 
 .site-header nav a {
     margin-left: 25px;
     text-decoration: none;
-    color: #e2e8f0;
+    color: #c4b5fd;
     font-weight: 600;
     font-size: 0.95rem;
 }
 
 .site-header nav a:hover {
-    color: #38bdf8;
+    color: #fbbf24;
 }
 
 /* Hero */
@@ -67,9 +67,9 @@ body {
 .hero-content h1 {
     font-size: 2.8rem;
     line-height: 1.25;
-    color: #ffffff;
+    color: #f1e5ff;
     font-weight: 800;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+    text-shadow: 0 2px 14px rgba(0,0,0,0.7);
     opacity: 0;
     transform: translateY(25px);
     animation: fadeUp 0.8s ease forwards;
@@ -77,14 +77,13 @@ body {
 }
 
 .highlight {
-    color: #38bdf8;
+    color: #fbbf24;
 }
-
 .hero-subtext {
     margin-top: 22px;
     font-size: 1.1rem;
-    color: #e2e8f0;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    color: #d8cef0;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.85);
     max-width: 620px;
     margin-left: auto;
     margin-right: auto;
@@ -94,27 +93,30 @@ body {
     animation-delay: 0.5s;
 }
 
-.cta-btn {
-    display: inline-block;
-    margin-top: 35px;
-    padding: 16px 32px;
-    background: linear-gradient(90deg, #06b6d4, #2563eb);
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    border-radius: 40px;
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.45);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+.cta-wrapper {
     opacity: 0;
     transform: translateY(25px);
     animation: fadeUp 0.8s ease forwards;
     animation-delay: 0.8s;
 }
 
+.cta-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    margin-top: 35px;
+    background: linear-gradient(90deg, #7c3aed, #fbbf24);
+    color: #1e1033;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    border-radius: 40px;
+    box-shadow: 0 8px 24px rgba(124, 58, 237, 0.5);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
 .cta-btn:hover {
     transform: scale(1.08);
-    box-shadow: 0 12px 28px rgba(37, 99, 235, 0.6);
+    box-shadow: 0 12px 32px rgba(251, 191, 36, 0.55);
 }
 
 @keyframes fadeUp {
@@ -130,19 +132,72 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(15, 23, 42, 0.55);
+    background: rgba(15, 12, 30, 0.55);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     font-size: 0.85rem;
-    color: #cbd5e1;
+    color: #c4b5fd;
 }
 
 .footer-links a {
     margin-left: 20px;
-    color: #cbd5e1;
+    color: #c4b5fd;
     text-decoration: none;
 }
 
 .footer-links a:hover {
-    color: #38bdf8;
+    color: #fbbf24;
+}
+
+/* Responsive Header & Footer */
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 16px 24px;
+    }
+
+    .site-header nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .site-header nav a {
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 24px;
+        text-align: left;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+    }
+
+    .footer-links a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.05rem;
+    }
+
+    .site-header nav a {
+        font-size: 0.85rem;
+    }
+
+    .site-footer {
+        font-size: 0.78rem;
+    }
 }
