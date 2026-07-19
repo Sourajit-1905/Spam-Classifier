@@ -1,4 +1,4 @@
-const API_URL = "https://your-backend-service.onrender.com/predict"; // update after backend deploy
+const API_URL = "/predict";
 
 const checkBtn = document.getElementById('checkBtn');
 const messageInput = document.getElementById('messageInput');
