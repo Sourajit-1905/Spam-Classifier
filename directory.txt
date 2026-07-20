@@ -28,7 +28,7 @@ sms-spam-detector/
 │   └── Sms_Spam_Working.ipynb       # Original EDA/training notebook
 │
 ├── data/
-│   └── spam.csv                     # Dataset (or script to fetch via kagglehub)
+│   └── spam.csv                     # Dataset (or script to fetch via kagglehub) Run the notebook cell to download it
 │
 ├── scripts/
 │   └── train.py                     # Clean, standalone training script (exported from notebook)

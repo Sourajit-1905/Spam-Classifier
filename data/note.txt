@@ -1,0 +1,2 @@
+Run the cell of the notebook to download it
+Or Go to : https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset/dataj
