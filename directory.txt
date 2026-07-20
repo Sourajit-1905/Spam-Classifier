@@ -35,6 +35,7 @@ sms-spam-detector/
 │
 ├── tests/
 │   └── test_app.py                  # Basic API/unit tests
+|   └── test_confidence.py           # Runs different messages as tests to evaluate model performance
 │
 ├── .gitignore
 ├── .env.example                     # Placeholder for env vars/config

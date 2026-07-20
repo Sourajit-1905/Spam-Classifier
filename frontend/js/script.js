@@ -43,7 +43,7 @@ checkBtn.addEventListener('click', async () => {
             resultBox.className = "result-box not-spam";
         }
 
-        resultScore.textContent = `Confidence: ${(data.probability * 100).toFixed(2)}%`;
+        resultScore.textContent = `${data.safety_score}% — ${data.confidence_label}`;
 
     } catch (error) {
         resultLabel.textContent = "Error connecting to server.";

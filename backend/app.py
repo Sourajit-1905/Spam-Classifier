@@ -6,7 +6,9 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from utils.preprocess import transform_message
+from utils.confidence import get_confidence_label
 
 # Point Flask to the frontend folder for static files
 FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'frontend')
@@ -52,13 +54,18 @@ def predict():
         return jsonify({"error": "Message is empty"}), 400
 
     cleaned = transform_message(message)
-    vector = vectorizer.transform([cleaned]).toarray()  # convert sparse -> dense
-    probability = model.predict_proba(vector)[0][1]
-    prediction = 1 if probability >= THRESHOLD else 0
+    vector = vectorizer.transform([cleaned]).toarray()
+    spam_probability = model.predict_proba(vector)[0][1]
+    prediction = 1 if spam_probability >= THRESHOLD else 0
+
+    safety_score = round((1 - spam_probability) * 100, 2)
+    confidence_label = get_confidence_label(safety_score)
 
     return jsonify({
         "prediction": prediction,
-        "probability": round(float(probability), 4)
+        "probability": round(float(spam_probability), 4),
+        "safety_score": safety_score,
+        "confidence_label": confidence_label
     })
 
 
