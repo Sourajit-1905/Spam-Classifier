@@ -37,8 +37,6 @@ sms-spam-detector/
 |   └── test_confidence.py           # Runs different messages as tests to evaluate model performance
 │
 ├── .gitignore
-├── .env.example                     # Placeholder for env vars/config
 ├── Procfile                         # For Render process declaration
-├── render.yaml                      # Render deployment blueprint (optional)
 ├── README.md
 └── LICENSE
