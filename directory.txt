@@ -34,7 +34,6 @@ sms-spam-detector/
 │   └── train.py                     # Clean, standalone training script (exported from notebook)
 │
 ├── tests/
-│   └── test_app.py                  # Basic API/unit tests
 |   └── test_confidence.py           # Runs different messages as tests to evaluate model performance
 │
 ├── .gitignore
