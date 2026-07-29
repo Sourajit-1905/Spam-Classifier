@@ -2,6 +2,8 @@ def get_confidence_label(safety_score):
     """
     Maps a 0-100 safety score into 20 bands (5% each).
     Lower score = more spam-like. Higher score = more safe (not spam).
+    Spam-leaning labels now extend through 50%, so the spam/safe split
+    happens exactly at the midpoint.
     """
     bands = [
         (5,   "Extremely likely spam"),
@@ -13,7 +15,7 @@ def get_confidence_label(safety_score):
         (35,  "Somewhat likely spam"),
         (40,  "Slightly leaning spam"),
         (45,  "Borderline, leaning spam"),
-        (50,  "Borderline, uncertain"),
+        (50,  "Borderline, still leaning spam"),
         (55,  "Borderline, leaning safe"),
         (60,  "Slightly leaning safe"),
         (65,  "Somewhat likely safe"),
@@ -30,4 +32,4 @@ def get_confidence_label(safety_score):
         if safety_score <= upper_bound:
             return label
 
-    return "Highly likely not spam"  
+    return "Highly likely not spam"  # fallback for exactly 100
