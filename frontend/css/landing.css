@@ -22,31 +22,106 @@ body {
 
 /* Header */
 .site-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(15, 12, 30, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 18px 50px;
+    background: rgba(15, 12, 30, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.site-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #7c3aed, #fbbf24, transparent);
+    opacity: 0.7;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7c3aed, #fbbf24);
+    box-shadow: 0 4px 14px rgba(124, 58, 237, 0.45);
+}
+
+.logo-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #1e1033;
+}
+
+.logo-text {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     color: #fcd34d;
+    letter-spacing: 0.2px;
+}
+
+.site-header nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .site-header nav a {
-    margin-left: 25px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    position: relative;
+    padding: 8px 14px;
     text-decoration: none;
     color: #c4b5fd;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.site-header nav a .nav-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    transition: color 0.25s ease;
+}
+
+.site-header nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 14px;
+    right: 14px;
+    height: 2px;
+    background: #fbbf24;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
 }
 
 .site-header nav a:hover {
     color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.site-header nav a:hover::after {
+    transform: scaleX(1);
 }
 
 /* Hero */
@@ -79,6 +154,7 @@ body {
 .highlight {
     color: #fbbf24;
 }
+
 .hero-subtext {
     margin-top: 22px;
     font-size: 1.1rem;
@@ -128,25 +204,103 @@ body {
 
 /* Footer */
 .site-footer {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background: rgba(15, 12, 30, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(15, 12, 30, 0.6);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     font-size: 0.85rem;
     color: #c4b5fd;
 }
 
+.site-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #fbbf24, #7c3aed, transparent);
+    opacity: 0.7;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-icon {
+    width: 16px;
+    height: 16px;
+    color: #fbbf24;
+    flex-shrink: 0;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
 .footer-links a {
-    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
     color: #c4b5fd;
     text-decoration: none;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.footer-links a svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
 }
 
 .footer-links a:hover {
     color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+}
+
+/* Footer divider and social icons */
+.footer-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(196, 181, 253, 0.3);
+    margin: 0 4px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    color: #c4b5fd;
+    text-decoration: none;
+    transition: color 0.25s ease, background 0.25s ease;
+}
+
+.footer-social svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+}
+
+.footer-social:hover {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.08);
+}
+
+.footer-social--linkedin:hover {
+    color: #60a5fa;
+    background: rgba(96, 165, 250, 0.08);
 }
 
 /* Responsive Header & Footer */
@@ -159,9 +313,8 @@ body {
     }
 
     .site-header nav {
-        display: flex;
         flex-wrap: wrap;
-        gap: 12px 20px;
+        gap: 6px;
     }
 
     .site-header nav a {
@@ -177,19 +330,22 @@ body {
         text-align: left;
     }
 
+    .footer-brand,
     .footer-links {
-        display: flex;
         flex-wrap: wrap;
-        gap: 8px 16px;
     }
 
     .footer-links a {
         margin-left: 0;
     }
+
+    .footer-divider {
+        display: none;
+    }
 }
 
 @media (max-width: 480px) {
-    .logo {
+    .logo-text {
         font-size: 1.05rem;
     }
 
