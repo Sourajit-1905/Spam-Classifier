@@ -15,12 +15,15 @@ sms-spam-detector/
 ├── frontend/
 │   ├── landing.html                 # Landing page with arrow button
 │   ├── index.html                   # Main page (SMS input + prediction UI)
+|   ├── api.html                     # API Specification Page 
 │   ├── css/
 │   │   ├── landing.css
-│   │   └── style.css
+│   │   ├── style.css
+|   |   └── api.css
 │   ├── js/
 │   │   ├── landing.js               # Handles arrow click → redirect to index.html
-│   │   └── script.js                # Calls backend API, displays result
+│   │   ├── script.js                # Calls backend API, displays result
+|   |   └── modal.js                 # Handles Data Privacy Page
 │   └── assets/
 │       └── (images/icons for landing page, arrow icon etc.)
 │
