@@ -6,7 +6,6 @@ const resultBox = document.getElementById('resultBox');
 const resultLabel = document.getElementById('resultLabel');
 const resultScore = document.getElementById('resultScore');
 
-// Maps 0-100 safety score to hue: 0 (red) → 120 (green)
 // Each of the 20 bands (5% wide) gets a proportional hue step
 function applyScoreColor(safetyScore) {
     const hue = Math.round(safetyScore * 1.2); // 0→0 (red), 100→120 (green)
@@ -46,7 +45,6 @@ checkBtn.addEventListener('click', async () => {
 
         const data = await response.json();
 
-        // Apply gradual hue based on safety score across 20 bands
         applyScoreColor(data.safety_score);
 
         resultLabel.textContent = data.prediction === 1 ? "🚨 SPAM" : "✅ NOT SPAM";

@@ -32,4 +32,4 @@ def get_confidence_label(safety_score):
         if safety_score <= upper_bound:
             return label
 
-    return "Highly likely not spam"  # fallback for exactly 100
+    return "Highly likely not spam"  
